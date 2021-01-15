@@ -54,7 +54,7 @@ class App extends Component {
 	handleSubmit = character => {
    	this.makePostCall(character).then( callResult => {
       	if (callResult.status === 201) {
-         this.setState({ characters: [...this.state.characters, character] });
+         this.setState({ characters: [...this.state.characters, callResult.data] });
       }
    });
  }
